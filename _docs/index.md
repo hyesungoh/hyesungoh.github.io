@@ -27,14 +27,3 @@ Ruby
 {% endhighlight %}
 
 <hr/>
-##### Recent docs
-
-
-<ul class="list-group">
-    {% for post in site.docs limit:10 %}
-    <li class="list-group-item">
-    <a href="{{ post.url | prepend: site.baseurl }}" {% if page.title==post.title %} class="list-group-item active" {% endif %}>
-    {{ post.title }}</a>
-    </li>
-    {% endfor %}
-</ul>

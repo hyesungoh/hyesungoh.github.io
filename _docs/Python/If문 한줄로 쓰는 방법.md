@@ -1,6 +1,7 @@
 ---
 title: If문 한줄로 쓰는 방법
 permalink: /docs/If문 한줄로 쓰는 방법/
+comments: true
 ---
 #### 대입
 {% highlight python %}
