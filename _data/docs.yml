@@ -14,6 +14,17 @@
 #   docs:
 #   - testDocs1
 
+- title: C
+
+- title: C#
+
 - title: Python
   docs:
   - If문 한줄로 쓰는 방법
+  - 삼항연산자
+
+- title: Ruby / Ruby on Rails
+
+- title: Algorithm
+
+- title: Machine Learning

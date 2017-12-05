@@ -1,50 +1,40 @@
 ---
-title: Welcome
+title: Hello World
 permalink: /docs/home/
 redirect_from: /docs/index.html
 ---
 
-## Getting started
+#### You can choose category to read docs
+<br/>
+C
+{% highlight c %}
+   printf("Hello World");
+{% endhighlight %}
 
-[GitHub Pages](https://pages.github.com) can automatically generate and serve the website for you.
-Let's say you have a username/organisation `my-org` and project `my-proj`; if you locate Jekyll source under `docs` folder of master branch in your repo `github.com/my-org/my-proj`, the website will be served on `my-org.github.io/my-proj`.
-The good thing about coupling your documentation with the source repo is, whenever you merge features with regarding content to master branch, it will also be published in the webpage instantly.
+C#
+{% highlight c# %}
+   Console.WriteLine("Hello World");
+{% endhighlight %}
 
-1. Just download the source from [github.com/aksakalli/jekyll-doc-theme](https://github.com/aksakalli/jekyll-doc-theme/master) into your repo under `docs` folder.
-2. Edit site settings in  `_config.yml` file according to your project.
-3. Replace `favicon.ico` and `img/logonav.png` with your own logo.
+Python
+{% highlight python %}
+   print("Hello World")
+{% endhighlight %}
 
-## Writing content
+Ruby
+{% highlight ruby %}
+   puts("Hello World")
+{% endhighlight %}
 
-### Docs
+<hr/>
+##### Recent docs
 
-Docs are [collections](https://jekyllrb.com/docs/collections/) of pages stored under `_docs` folder. To create a new page:
 
-**1.** Create a new Markdown as `_docs/my-page.md` and write [front matter](https://jekyllrb.com/docs/frontmatter/) & content such as:
-
-```
----
-title: My Page
-permalink: /docs/my-page/
----
-
-Hello World!
-```
-
-**2.** Add the pagename to `_data/docs.yml` file in order to list in docs navigation panel:
-
-```
-- title: My Group Title
-  docs:
-  - my-page
-```
-
-### Blog posts
-
-Add a new Markdown file such as `2017-05-09-my-post.md` and write the content similar to other post examples.
-
-### Pages
-
-The home page is located under `index.html` file. You can change the content or design completely different welcome page for your taste. (You can use [bootstrap componenets](http://getbootstrap.com/components/))
-
-In order to add a new page, create a new html or markdown file under root directory and link it in `_includes/topnav.html`.
+<ul class="list-group">
+    {% for post in site.docs limit:10 %}
+    <li class="list-group-item">
+    <a href="{{ post.url | prepend: site.baseurl }}" {% if page.title==post.title %} class="list-group-item active" {% endif %}>
+    {{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
