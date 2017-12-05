@@ -4,68 +4,8 @@
     
     
     {
-      "title": "Welcome",
-      "url": "/docs/home/"
-
-    },
-  
-    
-    
-    {
-      "title": "Themes",
-      "url": "/docs/themes/"
-
-    },
-  
-    
-    
-    {
-      "title": "Customization",
-      "url": "/docs/customization/"
-
-    },
-  
-
-  
-    
-    
-    {
-      "title": "Markdown Cheatsheet",
-      "url": "/docs/cheatsheet/"
-
-    },
-  
-    
-    
-    {
-      "title": "Font Awesome Icon List",
-      "url": "/docs/font-awesome/"
-
-    },
-  
-    
-    
-    {
-      "title": "Bootstrap Features",
-      "url": "/docs/bootstrap/"
-
-    },
-  
-
-  
-    
-    
-    {
-      "title": "",
-      "url": ""
-
-    },
-  
-    
-    
-    {
-      "title": "",
-      "url": ""
+      "title": "If문 한줄로 쓰는 방법",
+      "url": "/docs/If문 한줄로 쓰는 방법/"
 
     },
   
