@@ -24,7 +24,7 @@ comments: true
 
 <br>
 
-#### Lambda식과 유용하게 사용됨
+#### <a href="https://hyesungoh.github.io/docs/Lambda%EC%8B%9D/" target="blank">Lambda식과 유용하게 사용됨
 {% highlight python %}
   l = [11, 2, 3, 14]
   otl = list(filter(lambda x: x > 10, l))
