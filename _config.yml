@@ -14,6 +14,9 @@ url: "http://127.0.0.1:4000/" # the base hostname & protocol for your site
 git_address: https://github.com/hyesungoh
 git_edit_address: https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages
 
+
+excerpt_separator: ""
+
 # theme options from https://bootswatch.com/
 # comment out this to use default Bootstrap
 bootwatch: paper

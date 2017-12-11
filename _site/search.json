@@ -1,10 +1,6 @@
 [
 
   
-
-  
-
-  
     
     
     {
@@ -29,7 +25,29 @@
 
     },
   
+    
+    
+    {
+      "title": "Lambda식",
+      "url": "/docs/Lambda식/"
 
+    },
+  
+    
+    
+    {
+      "title": "Map 함수",
+      "url": "/docs/Map 함수/"
+
+    },
+  
+    
+    
+    {
+      "title": "Filter 함수",
+      "url": "/docs/Filter 함수/"
+
+    },
   
 
   
@@ -40,8 +58,6 @@
       "url": "/docs/서로 다른 부분 문자열의 개수/"
 
     },
-  
-
   
 
 

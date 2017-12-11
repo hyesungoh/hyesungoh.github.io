@@ -14,20 +14,23 @@
 #   docs:
 #   - testDocs1
 
-- title: C
-
-- title: C#
+# - title: C
+#
+# - title: C#
 
 - title: Python
   docs:
   - If문 한줄로 쓰는 방법
   - 삼항연산자
   - 집합 자료형
+  - Lambda식
+  - Map 함수
+  - Filter 함수
 
-- title: Ruby / Ruby on Rails
+# - title: Ruby / Ruby on Rails
 
 - title: Algorithm
   docs:
   - 서로 다른 부분 문자열의 개수
 
-- title: Machine Learning
+# - title: Machine Learning
