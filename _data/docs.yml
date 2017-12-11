@@ -33,4 +33,8 @@
   docs:
   - 서로 다른 부분 문자열의 개수
 
+- title: Web
+  docs:
+  - Jekyll - Tag was never closed Bug
+
 # - title: Machine Learning
