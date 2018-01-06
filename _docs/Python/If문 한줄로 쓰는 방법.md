@@ -5,8 +5,8 @@ comments: true
 ---
 #### 대입
 {% highlight python %}
-   # var = condition : function or value
-   num = if 5 > 3 : 5
+   # if condition : function or value
+   if 5 > 3 : num = 5
    # num = 5
 {% endhighlight %}
 
