@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>서로 다른 부분 문자열의 개수</title>
+    <title>BOJ-1654-랜선 자르기</title>
     <meta name="description" content="">
 
     <meta name="google-site-verification" content="4d0scAM8HVKRaG1gjdKgrbvBwBy-xSPxC_rShBNO3sU" />  
@@ -16,20 +16,20 @@
 
     <link rel="shortcut icon" href="/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.2.2 -->
-<title>서로 다른 부분 문자열의 개수 | Hyesung Oh’s Blog</title>
-<meta property="og:title" content="서로 다른 부분 문자열의 개수" />
+<title>BOJ-1654-랜선 자르기 | Hyesung Oh’s Blog</title>
+<meta property="og:title" content="BOJ-1654-랜선 자르기" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/docs/%EC%84%9C%EB%A1%9C%20%EB%8B%A4%EB%A5%B8%20%EB%B6%80%EB%B6%84%20%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%98%20%EA%B0%9C%EC%88%98/" />
-<meta property="og:url" content="http://localhost:4000/docs/%EC%84%9C%EB%A1%9C%20%EB%8B%A4%EB%A5%B8%20%EB%B6%80%EB%B6%84%20%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%98%20%EA%B0%9C%EC%88%98/" />
+<link rel="canonical" href="http://localhost:4000/docs/BOJ-1654-%EB%9E%9C%EC%84%A0%20%EC%9E%90%EB%A5%B4%EA%B8%B0/" />
+<meta property="og:url" content="http://localhost:4000/docs/BOJ-1654-%EB%9E%9C%EC%84%A0%20%EC%9E%90%EB%A5%B4%EA%B8%B0/" />
 <meta property="og:site_name" content="Hyesung Oh’s Blog" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2017-12-11T06:34:49+01:00" />
+<meta property="article:published_time" content="2018-01-13T11:22:36+01:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"서로 다른 부분 문자열의 개수","datePublished":"2017-12-11T06:34:49+01:00","dateModified":"2017-12-11T06:34:49+01:00","url":"http://localhost:4000/docs/%EC%84%9C%EB%A1%9C%20%EB%8B%A4%EB%A5%B8%20%EB%B6%80%EB%B6%84%20%EB%AC%B8%EC%9E%90%EC%97%B4%EC%9D%98%20%EA%B0%9C%EC%88%98/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"BOJ-1654-랜선 자르기","datePublished":"2018-01-13T11:22:36+01:00","dateModified":"2018-01-13T11:22:36+01:00","url":"http://localhost:4000/docs/BOJ-1654-%EB%9E%9C%EC%84%A0%20%EC%9E%90%EB%A5%B4%EA%B8%B0/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-    <link rel="canonical" href="http://localhost:4000/docs/서로 다른 부분 문자열의 개수/">
+    <link rel="canonical" href="http://localhost:4000/docs/BOJ-1654-랜선 자르기/">
     <link rel="alternate" type="application/rss+xml" title="Hyesung Oh's Blog" href="http://localhost:4000/feed.xml" />
 
 </head>
@@ -130,7 +130,11 @@
         
           
           
-          <a class="list-group-item active" href="/docs/서로 다른 부분 문자열의 개수/">서로 다른 부분 문자열의 개수</a>
+          <a class="list-group-item active" href="/docs/BOJ-1654-랜선 자르기/">BOJ-1654-랜선 자르기</a>
+        
+          
+          
+          <a class="list-group-item " href="/docs/BOJ-11478-서로 다른 부분 문자열의 개수/">BOJ-11478-서로 다른 부분 문자열의 개수</a>
         
       </ul>
     </div>
@@ -160,50 +164,57 @@
         </div>
 
         <div class="col-md-8">
-            <h2>서로 다른 부분 문자열의 개수</h2> <hr/>
-            <div id="markdown-content-container"><p><a href="https://www.acmicpc.net/problem/11478">
-<img src="/img/algo_01.png" alt="algo_01" /></a></p>
+            <h2>BOJ-1654-랜선 자르기</h2> <hr/>
+            <div id="markdown-content-container"><p><a href="https://www.acmicpc.net/problem/1654">
+<img src="/img/algo_02.png" alt="algo_01" /></a></p>
 
 <p><br /><br /></p>
 <h4 id="내-풀이">내 풀이</h4>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">s</span> <span class="o">=</span> <span class="nb">input</span><span class="p">();</span> <span class="n">l</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="c"># 문자열 슬라이싱을 이용하여 리스트에 append</span>
-<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-            <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">:</span><span class="n">j</span><span class="p">])</span>
+<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="c"># 입력 시간을 줄이기 위해 sys.stdin.readline() 사용</span>
+  <span class="kn">import</span> <span class="nn">sys</span>
+  <span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+  <span class="n">x</span><span class="p">,</span> <span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="nb">int</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 
-<span class="c"># 집합 자료형인 set을 중복요소 삭제를 위해 사용</span>
-<span class="c"># 공백이 1을 차지하기 때문에 -1 한 값이 정답</span>
-<span class="k">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">l</span><span class="p">))</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span></code></pre></figure>
+  <span class="c"># 랜선의 길이가 들어갈 list : l, 정답이 들어갈 변수 m</span>
+  <span class="n">l</span> <span class="o">=</span> <span class="p">[];</span> <span class="n">m</span> <span class="o">=</span> <span class="mi">0</span>
+
+  <span class="c"># x의 크기만큼 랜선의 길이 입력받아 list에 append</span>
+  <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+      <span class="n">l</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">stdin</span><span class="o">.</span><span class="n">readline</span><span class="p">()))</span>
+
+  <span class="c"># 이분탐색을 위해 high = 리스트 l에서 제일 큰 값</span>
+  <span class="n">low</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">high</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+
+  <span class="c"># 이분탐색</span>
+  <span class="k">while</span> <span class="n">low</span> <span class="o">&lt;=</span> <span class="n">high</span><span class="p">:</span>
+      <span class="n">mid</span> <span class="o">=</span> <span class="p">(</span><span class="n">high</span> <span class="o">+</span> <span class="n">low</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+      <span class="n">ans</span> <span class="o">=</span> <span class="mi">0</span>
+
+      <span class="c"># ans = 랜선이 잘라지고 남은 개수들의 합</span>
+      <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="n">l</span><span class="p">:</span> <span class="n">ans</span> <span class="o">+=</span> <span class="p">(</span><span class="n">j</span> <span class="o">//</span> <span class="n">mid</span><span class="p">)</span>
+
+      <span class="c"># 조건에 따라 탐색 범위를 좁혀감</span>
+      <span class="k">if</span> <span class="n">ans</span> <span class="o">&gt;=</span> <span class="n">n</span><span class="p">:</span>
+          <span class="n">low</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">+</span> <span class="mi">1</span>
+          <span class="k">if</span> <span class="n">mid</span> <span class="o">&gt;</span> <span class="n">m</span><span class="p">:</span> <span class="n">m</span> <span class="o">=</span> <span class="n">mid</span>
+      <span class="k">else</span><span class="p">:</span> <span class="n">high</span> <span class="o">=</span> <span class="n">mid</span> <span class="o">-</span> <span class="mi">1</span>
+  <span class="k">print</span><span class="p">(</span><span class="n">m</span><span class="p">)</span></code></pre></figure>
 
 <p><br /></p>
-<h4 id="다른-방법">다른 방법</h4>
+<h4 id="시간-복잡도">시간 복잡도</h4>
 <ul>
   <li>
-    <h5><a href="https://ko.wikipedia.org/wiki/%EC%A0%91%EB%AF%B8%EC%82%AC_%EB%B0%B0%EC%97%B4">Suffix Array</a>
-와 <a href="https://en.wikipedia.org/wiki/LCP_array">LCP</a> 사용</h5>
-    <ul>
-      <li>O(n lg n)</li>
-    </ul>
+    <h5>max() 함수 = O(n)</h5>
   </li>
   <li>
-    <h5><a href="https://ideone.com/bugbDy">트라이</a></h5>
-    <ul>
-      <li>O(n2)</li>
-    </ul>
-  </li>
-  <li>
-    <h5><a href="https://ideone.com/hkjw5n">해싱</a></h5>
-    <ul>
-      <li>O(n2 lg n)</li>
-    </ul>
+    <h5>이분탐색 = O(log N)</h5>
   </li>
 </ul>
 </div>
             <p class="text-center">
               <br />
-              <!-- <a target="_blank" href="https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages/_docs/Algorithm/서로 다른 부분 문자열의 개수.md" class="btn btn-default githubEditButton" role="button">
+              <!-- <a target="_blank" href="https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages/_docs/Algorithm/랜선 자르기.md" class="btn btn-default githubEditButton" role="button">
                 <i class="fa fa-pencil fa-lg"></i> Improve this page
               </a> -->
 
@@ -242,8 +253,13 @@
             <ul class="list-group">
                 
                 <li class="list-group-item">
-                <a href="/docs/서로 다른 부분 문자열의 개수/"  class="list-group-item active" >
-                서로 다른 부분 문자열의 개수</a>
+                <a href="/docs/BOJ-1654-랜선 자르기/"  class="list-group-item active" >
+                BOJ-1654-랜선 자르기</a>
+                </li>
+                
+                <li class="list-group-item">
+                <a href="/docs/BOJ-11478-서로 다른 부분 문자열의 개수/" >
+                BOJ-11478-서로 다른 부분 문자열의 개수</a>
                 </li>
                 
                 <li class="list-group-item">
@@ -329,7 +345,7 @@
         
         
         <li class="next">
-          <a href="/docs/Jekyll - Tag was never closed Bug/">
+          <a href="/docs/BOJ-11478-서로 다른 부분 문자열의 개수/">
             Next <span aria-hidden="true">&rarr;</span>
           </a>
         </li>
@@ -351,7 +367,7 @@
     <div class="container">
 
         <p class="text-center">
-            Hyesung Oh's Blog 2017 |
+            Hyesung Oh's Blog 2018 |
             Powered by <a href="https://github.com/hyesungoh/hyesungoh.github.io">Github</a>
         </p>
         <!-- <p class="text-muted">Place sticky footer content here.</p> -->
