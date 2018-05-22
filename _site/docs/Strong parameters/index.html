@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Map 함수</title>
+    <title>Strong parameters</title>
     <meta name="description" content="">
 
     <meta name="google-site-verification" content="4d0scAM8HVKRaG1gjdKgrbvBwBy-xSPxC_rShBNO3sU" />  
@@ -16,20 +16,20 @@
 
     <link rel="shortcut icon" href="/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.2.2 -->
-<title>Map 함수 | Hyesung Oh’s Blog</title>
-<meta property="og:title" content="Map 함수" />
+<title>Strong parameters | Hyesung Oh’s Blog</title>
+<meta property="og:title" content="Strong parameters" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/docs/Map%20%ED%95%A8%EC%88%98/" />
-<meta property="og:url" content="http://localhost:4000/docs/Map%20%ED%95%A8%EC%88%98/" />
+<link rel="canonical" href="http://localhost:4000/docs/Strong%20parameters/" />
+<meta property="og:url" content="http://localhost:4000/docs/Strong%20parameters/" />
 <meta property="og:site_name" content="Hyesung Oh’s Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-05-22T18:22:15+02:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Map 함수","datePublished":"2018-05-22T18:22:15+02:00","dateModified":"2018-05-22T18:22:15+02:00","url":"http://localhost:4000/docs/Map%20%ED%95%A8%EC%88%98/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Strong parameters","datePublished":"2018-05-22T18:22:15+02:00","dateModified":"2018-05-22T18:22:15+02:00","url":"http://localhost:4000/docs/Strong%20parameters/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-    <link rel="canonical" href="http://localhost:4000/docs/Map 함수/">
+    <link rel="canonical" href="http://localhost:4000/docs/Strong parameters/">
     <link rel="alternate" type="application/rss+xml" title="Hyesung Oh's Blog" href="http://localhost:4000/feed.xml" />
 
 </head>
@@ -107,7 +107,7 @@
         
           
           
-          <a class="list-group-item active" href="/docs/Map 함수/">Map 함수</a>
+          <a class="list-group-item " href="/docs/Map 함수/">Map 함수</a>
         
           
           
@@ -130,7 +130,7 @@
         
           
           
-          <a class="list-group-item " href="/docs/Strong parameters/">Strong parameters</a>
+          <a class="list-group-item active" href="/docs/Strong parameters/">Strong parameters</a>
         
       </ul>
     </div>
@@ -183,58 +183,101 @@
         </div>
 
         <div class="col-md-8">
-            <h2>Map 함수</h2> <hr/>
-            <div id="markdown-content-container"><h4 id="기본-형식">기본 형식</h4>
+            <h2>Strong parameters</h2> <hr/>
+            <div id="markdown-content-container"><h4 id="대량-할당---mass-assignment">대량 할당 - Mass Assignment</h4>
+<p>레일즈는 파라미터를 이용하여 모델 객체를 생성 가능</p>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python">   <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="n">iterable</span><span class="p">))</span>
-   <span class="c"># map(함수, 반복가능한 자료형)</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">PostController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="k">def</span> <span class="nf">create</span>
+    <span class="no">Post</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span></code></pre></figure>
 
 <p><br /></p>
+
+<h4 id="문제점">문제점</h4>
+<p>사용자가 예상치 못한 HTTP 요청 파라미터를 전달했을 때 발생</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="p">{</span> <span class="ss">id: </span><span class="mi">1</span><span class="p">,</span> <span class="ss">name: </span><span class="s1">'hyesung'</span><span class="p">,</span> <span class="ss">pwd: </span><span class="s1">'password'</span><span class="p">,</span> <span class="ss">is_admin: </span><span class="kp">true</span> <span class="p">}</span>
+  <span class="c1"># 위와 같이 회원이 관리자로 지정될 가능성이 존재</span></code></pre></figure>
+
+<p><br /></p>
+
+<h4> 해결방법 - <a href="https://github.com/rails/strong_parameters">Strong parameters</a></h4>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="c1"># in Gemfile</span>
+  <span class="n">gem</span> <span class="s1">'strong_parameters'</span></code></pre></figure>
 
 <ul>
   <li>
-    <h5> 각 요소 모두 함수에 적용된 값들을 반환 </h5>
+    <h5>permit</h5>
   </li>
 </ul>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="k">def</span> <span class="nf">plusTen</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">PostController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="k">def</span> <span class="nf">create</span>
+    <span class="n">post</span> <span class="o">=</span> <span class="no">Post</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">post_params</span><span class="p">)</span>
+    <span class="n">post</span><span class="p">.</span><span class="nf">save</span>
+  <span class="k">end</span>
 
-  <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-  <span class="n">ptl</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="n">plusTen</span><span class="p">,</span> <span class="n">l</span><span class="p">))</span>
-  <span class="k">print</span><span class="p">(</span><span class="n">ptl</span><span class="p">)</span>
-  <span class="c"># prints [11, 12, 13, 14]</span></code></pre></figure>
+  <span class="kp">private</span>
+    <span class="k">def</span> <span class="nf">post_params</span>
+      <span class="n">params</span><span class="p">.</span><span class="nf">permit</span><span class="p">(</span><span class="ss">:title</span><span class="p">,</span> <span class="ss">:content</span><span class="p">,</span> <span class="ss">:hashtags</span><span class="p">)</span>
+    <span class="k">end</span>
+
+<span class="k">end</span></code></pre></figure>
+
+<p>위 예제는 permit을 사용하여 whitelist(title, content, hashtag)에 해당하는 값만 허용</p>
+<p>whitelist에 없는 값이 존재 시 경고 로그를 남기고 whitelist에 해당하는 값만 반환</p>
 
 <ul>
   <li>
-    <h6> Python 2.7은 map 함수의 반환값이 list형 </h6>
+    <h5>require</h5>
   </li>
 </ul>
 
-<p><br /></p>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">PostController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+  <span class="k">def</span> <span class="nf">create</span>
+    <span class="n">post</span> <span class="o">=</span> <span class="no">Post</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">post_params</span><span class="p">)</span>
+    <span class="n">post</span><span class="p">.</span><span class="nf">save</span>
+  <span class="k">end</span>
 
-<h4 id="lambda식과-유용하게-사용됨"><a href="https://hyesungoh.github.io/docs/Lambda%EC%8B%9D/" target="blank">Lambda식</a>과 유용하게 사용됨</h4>
+  <span class="kp">private</span>
+    <span class="k">def</span> <span class="nf">post_params</span>
+      <span class="n">params</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:title</span><span class="p">).</span><span class="nf">permit</span><span class="p">(</span><span class="ss">:content</span><span class="p">,</span> <span class="ss">:hashtags</span><span class="p">)</span>
+    <span class="k">end</span>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
-  <span class="n">ptl</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">10</span><span class="p">,</span> <span class="n">l</span><span class="p">))</span>
+<span class="k">end</span></code></pre></figure>
 
-  <span class="k">print</span><span class="p">(</span><span class="n">ptl</span><span class="p">)</span>
-  <span class="c"># prints [11, 12, 13, 14]</span></code></pre></figure>
+<p>위 예제는 require를 사용하여 필수적으로 포함 할 값을 지정한 것</p>
+<p>require 값이 없을 시 ParameterMissing 예외 발생</p>
 
-<p><br /></p>
+<ul>
+  <li>
+    <h5>다중 require</h5>
+  </li>
+</ul>
 
-<h4 id="예">예</h4>
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  <span class="k">class</span> <span class="nc">PostController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
+    <span class="k">def</span> <span class="nf">create</span>
+      <span class="n">post</span> <span class="o">=</span> <span class="no">Post</span><span class="p">.</span><span class="nf">create</span><span class="p">(</span><span class="n">post_params</span><span class="p">)</span>
+      <span class="n">post</span><span class="p">.</span><span class="nf">save</span>
+    <span class="k">end</span>
 
-<figure class="highlight"><pre><code class="language-python" data-lang="python">  <span class="n">n</span> <span class="o">=</span> <span class="mi">12345</span>
-  <span class="n">l</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">n</span><span class="p">)))</span>
+    <span class="kp">private</span>
+      <span class="k">def</span> <span class="nf">post_params</span>
+        <span class="n">params</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:time</span><span class="p">)</span>
+        <span class="n">params</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:age</span><span class="p">)</span>
+        <span class="n">params</span><span class="p">.</span><span class="nf">require</span><span class="p">(</span><span class="ss">:title</span><span class="p">).</span><span class="nf">permit</span><span class="p">(</span><span class="ss">:content</span><span class="p">,</span> <span class="ss">:hashtags</span><span class="p">)</span>
+      <span class="k">end</span>
 
-  <span class="k">print</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-  <span class="c"># prints [1, 2, 3, 4, 5]</span></code></pre></figure>
+  <span class="k">end</span>
+  </code></pre></figure>
 
 </div>
             <p class="text-center">
               <br />
-              <!-- <a target="_blank" href="https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages/_docs/Python/Map 함수.md" class="btn btn-default githubEditButton" role="button">
+              <!-- <a target="_blank" href="https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages/_docs/Ruby on Rails/Strong parameters.md" class="btn btn-default githubEditButton" role="button">
                 <i class="fa fa-pencil fa-lg"></i> Improve this page
               </a> -->
 
@@ -298,7 +341,7 @@
                 </li>
                 
                 <li class="list-group-item">
-                <a href="/docs/Map 함수/"  class="list-group-item active" >
+                <a href="/docs/Map 함수/" >
                 Map 함수</a>
                 </li>
                 
@@ -313,7 +356,7 @@
                 </li>
                 
                 <li class="list-group-item">
-                <a href="/docs/Strong parameters/" >
+                <a href="/docs/Strong parameters/"  class="list-group-item active" >
                 Strong parameters</a>
                 </li>
                 
@@ -344,12 +387,18 @@
 
   
   
+
+  
+  
+
+  
+  
     <ul class="pager">
       
         
         
         <li class="previous">
-          <a href="/docs/Lambda식/">
+          <a href="/docs/Filter 함수/">
             <span aria-hidden="true">&larr;</span> Previous
           </a>
         </li>
@@ -359,7 +408,7 @@
         
         
         <li class="next">
-          <a href="/docs/Filter 함수/">
+          <a href="/docs/BOJ-1654-랜선 자르기/">
             Next <span aria-hidden="true">&rarr;</span>
           </a>
         </li>
