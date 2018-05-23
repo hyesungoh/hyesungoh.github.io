@@ -1,6 +1,6 @@
 ---
 title: Map 함수
-permalink: /docs/Map 함수/
+permalink: /docs/Map-함수/
 comments: true
 ---
 #### 기본 형식

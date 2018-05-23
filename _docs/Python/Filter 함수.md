@@ -1,6 +1,6 @@
 ---
 title: Filter 함수
-permalink: /docs/Filter 함수/
+permalink: /docs/Filter-함수/
 comments: true
 ---
 #### 기본 형식

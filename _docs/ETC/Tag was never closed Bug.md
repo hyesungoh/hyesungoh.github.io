@@ -1,6 +1,6 @@
 ---
 title: Jekyll - Tag was never closed Bug
-permalink: /docs/Jekyll - Tag was never closed Bug/
+permalink: /docs/Jekyll - Tag-was-never-closed-Bug/
 comments: true
 ---
 ![web-01](/img/web-01.png)

@@ -1,6 +1,6 @@
 ---
 title: Strong parameters
-permalink: /docs/Strong parameters/
+permalink: /docs/Strong-parameters/
 comments: true
 ---
 #### 대량 할당 - Mass Assignment
