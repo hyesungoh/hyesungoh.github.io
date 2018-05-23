@@ -20,25 +20,25 @@
 
 - title: Python
   docs:
-  - If문 한줄로 쓰는 방법
+  - If문-한줄로-쓰는-방법
   - 삼항연산자
-  - 집합 자료형
+  - 집합-자료형
   - Lambda식
-  - Map 함수
-  - Filter 함수
+  - Map-함수
+  - Filter-함수
 
 - title: Ruby on Rails
   docs:
-  - Strong parameters
+  - Strong-parameters
 
 
 - title: Algorithm
   docs:
-  - BOJ-1654-랜선 자르기
-  - BOJ-11478-서로 다른 부분 문자열의 개수
+  - BOJ-1654-랜선-자르기
+  - BOJ-11478-서로-다른-부분-문자열의-개수
 
 - title: ETC
   docs:
-  - Jekyll - Tag was never closed Bug
+  - Jekyll-Tag-was-never-closed-Bug
 
 # - title: Machine Learning
