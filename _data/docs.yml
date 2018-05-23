@@ -20,7 +20,6 @@
 
 - title: Python
   docs:
-  - If문-한줄로-쓰는-방법
   - 삼항연산자
   - 집합-자료형
   - Lambda식
