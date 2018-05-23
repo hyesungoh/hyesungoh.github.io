@@ -30,6 +30,7 @@
 - title: Ruby on Rails
   docs:
   - Strong-parameters
+  - Filter
 
 
 - title: Algorithm
