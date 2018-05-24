@@ -24,8 +24,8 @@ end
 
 <h4> 해결방법 - <a href="https://github.com/rails/strong_parameters">Strong parameters</a></h4>
 {% highlight ruby %}
-  # rails 4. 버전은 기본적으로 포함
-  # in Gemfile
+  # rails 4. 버전은 기본적으로 포함
+  # in Gemfile
   gem 'strong_parameters'
 {% endhighlight %}
 
