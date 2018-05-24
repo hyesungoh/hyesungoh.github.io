@@ -27,13 +27,12 @@ end
   # in Gemfile
   gem 'strong_parameters'
 {% endhighlight %}
-
+rails 4는 기본으로 포함
 * <h5>permit</h5>
 {% highlight ruby %}
 class PostController < ApplicationController
   def create
     post = Post.create(post_params)
-    post.save
   end
 
   private
@@ -51,12 +50,11 @@ end
 class PostController < ApplicationController
   def create
     post = Post.create(post_params)
-    post.save
   end
 
   private
     def post_params
-      params.require(:title).permit(:content, :hashtags)
+      params.require(:post).permit(:title, :content, :hashtags)
     end
 
 end
@@ -69,14 +67,13 @@ end
   class PostController < ApplicationController
     def create
       post = Post.create(post_params)
-      post.save
     end
 
     private
       def post_params
         params.require(:time)
         params.require(:age)
-        params.require(:title).permit(:content, :hashtags)
+        params.require(:post).permit(:title, :content, :hashtags)
       end
 
   end
