@@ -24,10 +24,11 @@ end
 
 <h4> 해결방법 - <a href="https://github.com/rails/strong_parameters">Strong parameters</a></h4>
 {% highlight ruby %}
-  # in Gemfile
+  # rails 4. 버전은 기본적으로 포함
+  # in Gemfile
   gem 'strong_parameters'
 {% endhighlight %}
-rails 4는 기본으로 포함
+
 * <h5>permit</h5>
 {% highlight ruby %}
 class PostController < ApplicationController
