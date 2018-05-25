@@ -48,15 +48,15 @@ end
 <p>whitelist에 없는 값이 존재 시 경고 로그를 남기고 whitelist에 해당하는 값만 반환</p>
 
 * <h5>require</h5>
-{% highlight ruby %}
-# in html.erb
+{% highlight html %}
+<!-- in html.erb -->
 <form action="/posts/create" method="post">
   <input type="text" name="post[title]">
   <input type="text" name="post[content]">
   <input type="submit" value="Submit">
 </form>
 
-# Parameters: {"post"=>{"title"=>"name", "content"=>"post"}}
+<!-- Parameters: {"post"=>{"title"=>"name", "content"=>"post"}} -->
 {% endhighlight %}
 {% highlight ruby %}
 class PostController < ApplicationController
@@ -71,6 +71,7 @@ class PostController < ApplicationController
 
 end
 {% endhighlight %}
+<p>require는 hash type이여야 함</p>
 <p>위 예제는 require를 사용하여 필수적으로 포함 할 값을 지정한 것</p>
 <p>require 값이 없을 시 ParameterMissing 예외 발생</p>
 
