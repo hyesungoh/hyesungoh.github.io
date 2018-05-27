@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-25T11:31:52+02:00</updated><id>http://localhost:4000/</id><title type="html">Hyesung Oh’s Blog</title><subtitle>Jekyll Template for Project Websites providing documentation and blog post pages.
-</subtitle><entry><title type="html">세팅 끝</title><link href="http://localhost:4000/blog/2017/12/05/%EC%84%B8%ED%8C%85-%EB%81%9D/" rel="alternate" type="text/html" title="세팅 끝" /><published>2017-12-05T18:25:00+01:00</published><updated>2017-12-05T18:25:00+01:00</updated><id>http://localhost:4000/blog/2017/12/05/%EC%84%B8%ED%8C%85-%EB%81%9D</id><content type="html" xml:base="http://localhost:4000/blog/2017/12/05/%EC%84%B8%ED%8C%85-%EB%81%9D/">&lt;p&gt;테마 입맛에 맞게 바꾸고 카테고리 세팅 좀 하고.. 댓글까지는 달아 놓았다.&amp;lt;/br&amp;gt;
-생각보다 댓글 다는게 쉬워서 깜짝 놀라버렸넹&lt;br /&gt;
-&lt;br /&gt;
-&lt;a href=&quot;https://disqus.com/&quot;&gt;DISQUS&lt;/a&gt; 가입하고 사이트 url 적고&lt;br /&gt;
-코드 복붙만 하면 된다니 신세계가 따로 없다.&lt;br /&gt;
-&lt;br /&gt;
-jekyll이 레일즈를 사용해서 멋쟁이사자처럼에서 배워둔게 크게 작용한 것 같다. 개쩔탱&lt;br /&gt;
-&lt;br /&gt;
-근데 다른 에디터가 아닌 마크다운 형식으로 글을 적다보니 낯선게 많다&lt;br /&gt;
-차라리 html이 편할 수도 있을 것 같..나..&lt;br /&gt;&lt;/p&gt;</content><author><name>hyesungoh</name></author></entry><entry><title type="html">Start Github Blog</title><link href="http://localhost:4000/blog/2017/12/05/Start-Github-Blog/" rel="alternate" type="text/html" title="Start Github Blog" /><published>2017-12-05T11:00:00+01:00</published><updated>2017-12-05T11:00:00+01:00</updated><id>http://localhost:4000/blog/2017/12/05/Start-Github-Blog</id><content type="html" xml:base="http://localhost:4000/blog/2017/12/05/Start-Github-Blog/">&lt;p&gt;jekyll theme 뜯어고치는 중..
-차라리 처음부터 만드는게 나을 것 같다…
-살려줘 ..&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;Test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
-  &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;testing&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-
-&lt;span class=&quot;n&quot;&gt;Test&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;이게 될려나&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c&quot;&gt;#=&amp;gt; 주석까지 ..?&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;신기하긴하네 ..&lt;/p&gt;</content><author><name>hyesungoh</name></author></entry></feed>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.4.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-27T15:59:39+02:00</updated><id>http://localhost:4000/</id><title type="html">Hyesung Oh’s Blog</title><subtitle>Jekyll Template for Project Websites providing documentation and blog post pages.
+</subtitle></feed>
