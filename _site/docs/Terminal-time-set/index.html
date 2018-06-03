@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Filter</title>
+    <title>Terminal - time set</title>
     <meta name="description" content="">
 
     <meta name="google-site-verification" content="4d0scAM8HVKRaG1gjdKgrbvBwBy-xSPxC_rShBNO3sU" />  
@@ -16,20 +16,20 @@
 
     <link rel="shortcut icon" href="/favicon.ico?1">
     <!-- Begin Jekyll SEO tag v2.2.2 -->
-<title>Filter | Hyesung Oh’s Blog</title>
-<meta property="og:title" content="Filter" />
+<title>Terminal - time set | Hyesung Oh’s Blog</title>
+<meta property="og:title" content="Terminal - time set" />
 <meta property="og:locale" content="en_US" />
-<link rel="canonical" href="http://localhost:4000/docs/Filter/" />
-<meta property="og:url" content="http://localhost:4000/docs/Filter/" />
+<link rel="canonical" href="http://localhost:4000/docs/Terminal-time-set/" />
+<meta property="og:url" content="http://localhost:4000/docs/Terminal-time-set/" />
 <meta property="og:site_name" content="Hyesung Oh’s Blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2018-06-03T17:20:17+02:00" />
 <script type="application/ld+json">
-{"@context":"http://schema.org","@type":"WebPage","headline":"Filter","datePublished":"2018-06-03T17:20:17+02:00","dateModified":"2018-06-03T17:20:17+02:00","url":"http://localhost:4000/docs/Filter/"}</script>
+{"@context":"http://schema.org","@type":"WebPage","headline":"Terminal - time set","datePublished":"2018-06-03T17:20:17+02:00","dateModified":"2018-06-03T17:20:17+02:00","url":"http://localhost:4000/docs/Terminal-time-set/"}</script>
 <!-- End Jekyll SEO tag -->
 
 
-    <link rel="canonical" href="http://localhost:4000/docs/Filter/">
+    <link rel="canonical" href="http://localhost:4000/docs/Terminal-time-set/">
     <link rel="alternate" type="application/rss+xml" title="Hyesung Oh's Blog" href="http://localhost:4000/feed.xml" />
 
 </head>
@@ -130,7 +130,7 @@
         
           
           
-          <a class="list-group-item active" href="/docs/Filter/">Filter</a>
+          <a class="list-group-item " href="/docs/Filter/">Filter</a>
         
       </ul>
     </div>
@@ -176,7 +176,7 @@
         
           
           
-          <a class="list-group-item " href="/docs/Terminal-time-set/">Terminal - time set</a>
+          <a class="list-group-item active" href="/docs/Terminal-time-set/">Terminal - time set</a>
         
       </ul>
     </div>
@@ -187,95 +187,28 @@
         </div>
 
         <div class="col-md-8">
-            <h2>Filter</h2> <hr/>
-            <div id="markdown-content-container"><h4 id="필터는-액션의-직전-직후-혹은-둘-다에-실행되는-메소드">필터는 액션의 <b>직전</b>, <b>직후</b> 혹은 <b>둘 다</b>에 실행되는 메소드</h4>
-<p>필터는 상속이 가능하여, ApplicationController에 필터를 설정하면 모든 컨트롤러에 적용
-<br /></p>
+            <h2>Terminal - time set</h2> <hr/>
+            <div id="markdown-content-container"><h4 id="시간-확인-방법">시간 확인 방법</h4>
 
-<ul>
-  <li>
-    <h4>before</h4>
-    <p>액션이 실행되기 직전에 실행<br />
-아래는 사용자가 액션을 실행하기 전에 로그인을 요구하는 것</p>
-  </li>
-</ul>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>date <span class="s2">"+%H:%M:%S   %d/%m/%y"</span>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">ApplicationController</span> <span class="o">&lt;</span> <span class="no">ActionController</span><span class="o">::</span><span class="no">Base</span>
-  <span class="c1"># devise gem 사용 시</span>
-  <span class="c1"># before_action :authenticate_user!</span>
-  <span class="n">before_action</span> <span class="ss">:require_login</span>
+<span class="gp">=&gt; </span>15:02:55   03/06/18</code></pre></figure>
 
-  <span class="kp">private</span>
+<p><br /></p>
 
-  <span class="k">def</span> <span class="nf">require_login</span>
-    <span class="k">unless</span> <span class="n">user_signed_in?</span>
-      <span class="n">redirect_to</span> <span class="s1">'users/sign_in'</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span></code></pre></figure>
+<h4 id="시간-설정-방법">시간 설정 방법</h4>
 
-<ul>
-  <li>
-    <h4>after</h4>
-    <p>액션이 실행된 후에 실행<br />
-<b>클라이언트에 전송할 데이터에 접근할 수 있다</b><br />
-어떻게 작성하여도 액션의 실행을 중단할 수 없다
-<br /></p>
-  </li>
-  <li>
-    <h4>around</h4>
-    <p>필터 내부의 어딘가에서 반드시 yield를 실행해서 액션을 실행해야한다<br />
-화면 출력(랜더링)도 yield에 포함된다<br />
-일부러 yield를 실행하지 않고 직접 응답을 생성한다는 방법도 존재, 이 경우 액션은 실행되지 않는다</p>
-  </li>
-</ul>
-<hr />
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>sudo dpkg-reconfigure tzdata
 
-<h4 id="필터가-적용되는-액션을-지정하는-방법">필터가 적용되는 액션을 지정하는 방법</h4>
-<ul>
-  <li>
-    <h4>only</h4>
-    <p>only는 특정 액션에만 필터를 적용한다</p>
-  </li>
-</ul>
+<span class="gp">=&gt; </span>Current default <span class="nb">time </span>zone: <span class="s1">'Asia/Seoul'</span>
+<span class="gp">=&gt; </span>Local <span class="nb">time </span>is now:      Mon Jun  4 00:04:59 KST 2018.
+<span class="gp">=&gt; </span>Universal Time is now:  Sun Jun  3 15:04:59 UTC 2018.</code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">PostController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
-  <span class="c1"># devise gem 사용 시</span>
-  <span class="c1"># before_action :authenticate_user!, only:[:show, :create]</span>
-  <span class="n">before_action</span> <span class="ss">:require_login</span><span class="p">,</span> <span class="ss">only: </span><span class="p">[</span><span class="ss">:show</span><span class="p">,</span> <span class="ss">:create</span><span class="p">]</span>
-<span class="k">end</span></code></pre></figure>
-
-<ul>
-  <li>
-    <h4>except</h4>
-    <p>except는 특정 액션을 제외하고 필터를 적용한다</p>
-  </li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">PostController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
-  <span class="c1"># devise gem 사용 시</span>
-  <span class="c1"># before_action :authenticate_user!, except: :index</span>
-  <span class="n">before_action</span> <span class="ss">:require_login</span><span class="p">,</span> <span class="ss">except: :index</span>
-<span class="k">end</span></code></pre></figure>
-
-<ul>
-  <li>
-    <h4>skip_before_action</h4>
-    <p>ApplicationController에 필터를 적용했을 시, skip_before_action을 사용하여 특정 액션에서 필터를 적용하지 않을 수 있다</p>
-  </li>
-</ul>
-
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="k">class</span> <span class="nc">PostController</span> <span class="o">&lt;</span> <span class="no">ApplicationController</span>
-  <span class="c1"># devise gem 사용 시</span>
-  <span class="c1"># skip_before_action :authenticate_user!, only:[:show, :create]</span>
-  <span class="n">skip_before_action</span> <span class="ss">:require_login</span><span class="p">,</span> <span class="ss">only: </span><span class="p">[</span><span class="ss">:new</span><span class="p">,</span> <span class="ss">:create</span><span class="p">]</span>
-<span class="k">end</span></code></pre></figure>
-
-<p>skip_before_action ~, only: ~의 경우 특정 액션을 제외하고 필터를 적용하게 된다</p>
+<p><br /></p>
 </div>
             <p class="text-center">
               <br />
-              <!-- <a target="_blank" href="https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages/_docs/Ruby on Rails/Filter.md" class="btn btn-default githubEditButton" role="button">
+              <!-- <a target="_blank" href="https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages/_docs/ETC/Terminal time set.md" class="btn btn-default githubEditButton" role="button">
                 <i class="fa fa-pencil fa-lg"></i> Improve this page
               </a> -->
 
@@ -329,7 +262,7 @@
                 </li>
                 
                 <li class="list-group-item">
-                <a href="/docs/Terminal-time-set/" >
+                <a href="/docs/Terminal-time-set/"  class="list-group-item active" >
                 Terminal - time set</a>
                 </li>
                 
@@ -359,7 +292,7 @@
                 </li>
                 
                 <li class="list-group-item">
-                <a href="/docs/Filter/"  class="list-group-item active" >
+                <a href="/docs/Filter/" >
                 Filter</a>
                 </li>
                 
@@ -391,22 +324,32 @@
 
   
   
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
     <ul class="pager">
       
         
         
         <li class="previous">
-          <a href="/docs/Strong-parameters/">
+          <a href="/docs/Jekyll-Tag-was-never-closed-Bug/">
             <span aria-hidden="true">&larr;</span> Previous
           </a>
         </li>
       
 
       
-        
-        
-        <li class="next">
-          <a href="/docs/BOJ-1654-랜선-자르기/">
+        <li class="next disabled">
+          <a>
             Next <span aria-hidden="true">&rarr;</span>
           </a>
         </li>
