@@ -19,4 +19,4 @@ comments: true
   # prints 30
 {% endhighlight %}
 <br>
-#### <a href="https://hyesungoh.github.io/docs/Map%20%ED%95%A8%EC%88%98/" target="blank">Map</a>, <a href="https://hyesungoh.github.io/docs/Filter%20%ED%95%A8%EC%88%98/" target="blank">Filter</a> 함수와 유용하게 사용됨
+#### <a href="https://hyesungoh.github.io/docs/Map-%ED%95%A8%EC%88%98/" target="blank">Map</a>, <a href="https://hyesungoh.github.io/docs/Filter-%ED%95%A8%EC%88%98/" target="blank">Filter</a> 함수와 유용하게 사용됨
